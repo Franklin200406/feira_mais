@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'cart_screen.dart';
 import 'categories_screen.dart';
+import 'seller_central_screen.dart';
+import 'store_form_screen.dart';
 
 
 class MoreScreen extends StatelessWidget {
@@ -150,13 +152,27 @@ class MoreScreen extends StatelessWidget {
                   _MoreMenuItem(
                     icon: Icons.sell_outlined,
                     title: 'Vender',
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const StoreFormScreen(),
+                        ),
+                      );
+                    },
                   ),
 
                   _MoreMenuItem(
                     icon: Icons.store_outlined,
                     title: 'Central de Vendedores',
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const SellerCentralScreen(),
+                        ),
+                      );
+                    },
                   ),
 
                   _MoreMenuItem(
@@ -268,11 +284,15 @@ class _MoreMenuItem extends StatelessWidget {
 
               const SizedBox(width: 18),
 
-              Text(
-                title,
-                style: const TextStyle(
-                  fontSize: 16,
-                  color: Colors.black,
+              Expanded(
+                child: Text(
+                  title,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    color: Colors.black,
+                  ),
                 ),
               ),
             ],

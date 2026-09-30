@@ -4,6 +4,7 @@ const List<Product> products = [
   Product(
     category: 'Eletrônicos',
     name: 'Fone de Ouvido Bluetooth',
+    storeId: 'magalu',
     originalPrice: 'R\$ 119,90',
     price: 'R\$ 89,90',
     description: 'Fone sem fio com estojo de carregamento, conexão rápida e som nítido para o dia a dia.',
@@ -17,6 +18,7 @@ const List<Product> products = [
   Product(
     category: 'Eletrônicos',
     name: 'Smartwatch Digital',
+    storeId: 'magalu',
     originalPrice: 'R\$ 249,90',
     price: 'R\$ 199,90',
     description: 'Relógio inteligente com monitor de atividades, notificações do celular e pulseira confortável.',
@@ -30,6 +32,7 @@ const List<Product> products = [
   Product(
     category: 'Eletrônicos',
     name: 'Caixa de Som Bluetooth',
+    storeId: 'magalu',
     originalPrice: 'R\$ 199,90',
     price: 'R\$ 159,90',
     description: 'Caixa de som inteligente com assistente de voz e áudio de 360° para toda a casa.',
@@ -42,6 +45,7 @@ const List<Product> products = [
   Product(
     category: 'Eletrônicos',
     name: 'Bateria Portátil Magnética',
+    storeId: 'magalu',
     originalPrice: 'R\$ 299,90',
     price: 'R\$ 249,90',
     description: 'Carregador portátil magnético que encaixa atrás do celular e garante carga extra onde você estiver.',
@@ -54,6 +58,7 @@ const List<Product> products = [
   Product(
     category: 'Eletrônicos',
     name: 'Bastão Monopé para Celular',
+    storeId: 'magalu',
     originalPrice: 'R\$ 49,90',
     price: 'R\$ 34,90',
     description: 'Monopé leve e ajustável para fotos e vídeos mais estáveis.',
@@ -66,6 +71,7 @@ const List<Product> products = [
   Product(
     category: 'Moda',
     name: 'Tênis Esportivo',
+    storeId: 'mersan',
     originalPrice: 'R\$ 199,90',
     price: 'R\$ 149,90',
     description: 'Tênis casual com solado macio e design moderno, ideal para o uso diário.',
@@ -80,6 +86,7 @@ const List<Product> products = [
   Product(
     category: 'Moda',
     name: 'Tênis Cano Alto Vermelho e Preto',
+    storeId: 'mersan',
     originalPrice: 'R\$ 899,90',
     price: 'R\$ 699,90',
     description:
@@ -95,6 +102,7 @@ const List<Product> products = [
   Product(
     category: 'Moda',
     name: 'Camisa Xadrez Masculina',
+    storeId: 'riachuelo',
     originalPrice: 'R\$ 119,90',
     price: 'R\$ 89,90',
     description: 'Camisa de manga longa em tecido xadrez, confortável e fácil de combinar.',
@@ -109,6 +117,7 @@ const List<Product> products = [
   Product(
     category: 'Moda',
     name: 'Camiseta Gamer Masculina',
+    storeId: 'riachuelo',
     originalPrice: 'R\$ 79,90',
     price: 'R\$ 59,90',
     description:
@@ -124,6 +133,7 @@ const List<Product> products = [
   Product(
     category: 'Moda',
     name: 'Vestido Estampado',
+    storeId: 'cea',
     originalPrice: 'R\$ 199,90',
     price: 'R\$ 149,90',
     description: 'Vestido leve e estampado, perfeito para dias quentes.',
@@ -138,6 +148,7 @@ const List<Product> products = [
   Product(
     category: 'Moda',
     name: 'Vestido Cinza',
+    storeId: 'cea',
     originalPrice: 'R\$ 129,90',
     price: 'R\$ 99,90',
     description:
@@ -153,6 +164,7 @@ const List<Product> products = [
   Product(
     category: 'Moda',
     name: 'Sapato de Salto Feminino',
+    storeId: 'mersan',
     originalPrice: 'R\$ 349,90',
     price: 'R\$ 279,90',
     description:
@@ -168,6 +180,7 @@ const List<Product> products = [
   Product(
     category: 'Celulares',
     name: 'Smartphone',
+    storeId: 'mersan',
     originalPrice: 'R\$ 1.499,90',
     price: 'R\$ 1.299,90',
     description: 'Smartphone com tela ampla, câmera de alta resolução e bateria de longa duração.',
@@ -181,6 +194,7 @@ const List<Product> products = [
   Product(
     category: 'Celulares',
     name: 'iPhone 13 Pro',
+    storeId: 'mersan',
     originalPrice: 'R\$ 5.799,90',
     price: 'R\$ 4.999,90',
     description: 'iPhone com sistema de câmera tripla, tela Super Retina e desempenho de ponta.',
@@ -194,6 +208,7 @@ const List<Product> products = [
   Product(
     category: 'Celulares',
     name: 'Realme X',
+    storeId: 'mersan',
     originalPrice: 'R\$ 1.299,90',
     price: 'R\$ 1.099,90',
     description: 'Celular com câmera frontal retrátil e tela sem entalhe.',
@@ -207,6 +222,7 @@ const List<Product> products = [
   Product(
     category: 'Celulares',
     name: 'Oppo K1',
+    storeId: 'mersan',
     originalPrice: 'R\$ 1.199,90',
     price: 'R\$ 999,90',
     description:
@@ -222,6 +238,7 @@ const List<Product> products = [
   Product(
     category: 'Celulares',
     name: 'Vivo X21',
+    storeId: 'mersan',
     originalPrice: 'R\$ 1.699,90',
     price: 'R\$ 1.399,90',
     description: 'Celular com tela grande, câmera dupla e design fino.',
@@ -235,6 +252,7 @@ const List<Product> products = [
   Product(
     category: 'Casa',
     name: 'Liquidificador',
+    storeId: 'magalu',
     originalPrice: 'R\$ 169,90',
     price: 'R\$ 129,90',
     description:
@@ -250,6 +268,7 @@ const List<Product> products = [
   Product(
     category: 'Casa',
     name: 'Micro-ondas',
+    storeId: 'magalu',
     originalPrice: 'R\$ 599,90',
     price: 'R\$ 499,90',
     description: 'Micro-ondas com funções automáticas e painel fácil de usar.',
@@ -264,6 +283,7 @@ const List<Product> products = [
   Product(
     category: 'Casa',
     name: 'Fogão Elétrico',
+    storeId: 'magalu',
     originalPrice: 'R\$ 379,90',
     price: 'R\$ 299,90',
     description: 'Fogão elétrico compacto, ideal para cozinhas pequenas.',
@@ -278,6 +298,7 @@ const List<Product> products = [
   Product(
     category: 'Casa',
     name: 'Sofá Estofado',
+    storeId: 'magalu',
     originalPrice: 'R\$ 4.799,90',
     price: 'R\$ 3.999,90',
     description: 'Sofá amplo e macio, com estofado de alta qualidade para a sala de estar.',
@@ -291,6 +312,7 @@ const List<Product> products = [
   Product(
     category: 'Casa',
     name: 'Mesa de Cabeceira',
+    storeId: 'magalu',
     originalPrice: 'R\$ 849,90',
     price: 'R\$ 699,90',
     description: 'Mesa de cabeceira em madeira com gaveta para o quarto.',
@@ -304,6 +326,7 @@ const List<Product> products = [
   Product(
     category: 'Casa',
     name: 'Vaso de Planta',
+    storeId: 'riachuelo',
     originalPrice: 'R\$ 54,90',
     price: 'R\$ 39,90',
     description:
@@ -319,6 +342,7 @@ const List<Product> products = [
   Product(
     category: 'Casa',
     name: 'Planta Decorativa',
+    storeId: 'riachuelo',
     originalPrice: 'R\$ 99,90',
     price: 'R\$ 79,90',
     description:
@@ -333,6 +357,7 @@ const List<Product> products = [
   Product(
     category: 'Beleza',
     name: 'Perfume CK One',
+    storeId: 'boticario',
     originalPrice: 'R\$ 369,90',
     price: 'R\$ 299,90',
     description: 'Fragrância unissex fresca e marcante para o dia a dia.',
@@ -346,6 +371,7 @@ const List<Product> products = [
   Product(
     category: 'Beleza',
     name: 'Perfume Gucci Bloom',
+    storeId: 'boticario',
     originalPrice: 'R\$ 649,90',
     price: 'R\$ 549,90',
     description: 'Perfume feminino com notas florais delicadas.',
@@ -359,6 +385,7 @@ const List<Product> products = [
   Product(
     category: 'Beleza',
     name: 'Perfume Chanel Coco Noir',
+    storeId: 'boticario',
     originalPrice: 'R\$ 1.049,90',
     price: 'R\$ 899,90',
     description: 'Fragrância sofisticada e intensa, ideal para a noite.',
@@ -372,6 +399,7 @@ const List<Product> products = [
   Product(
     category: 'Beleza',
     name: 'Sabonete Líquido Hidratante',
+    storeId: 'boticario',
     originalPrice: 'R\$ 49,90',
     price: 'R\$ 39,90',
     description: 'Sabonete líquido com manteiga de karité que hidrata a pele.',
@@ -385,6 +413,7 @@ const List<Product> products = [
   Product(
     category: 'Beleza',
     name: 'Loção Hidratante Masculina',
+    storeId: 'boticario',
     originalPrice: 'R\$ 39,90',
     price: 'R\$ 29,90',
     description: 'Loção leve para corpo e rosto, de rápida absorção.',
@@ -398,6 +427,7 @@ const List<Product> products = [
   Product(
     category: 'Esportes',
     name: 'Luva de Beisebol',
+    storeId: 'centauro',
     originalPrice: 'R\$ 149,90',
     price: 'R\$ 119,90',
     description:
@@ -412,6 +442,7 @@ const List<Product> products = [
   Product(
     category: 'Esportes',
     name: 'Capacete de Críquete',
+    storeId: 'centauro',
     originalPrice: 'R\$ 249,90',
     price: 'R\$ 199,90',
     description: 'Capacete com grade de proteção e ajuste confortável.',
@@ -426,6 +457,7 @@ const List<Product> products = [
   Product(
     category: 'Esportes',
     name: 'Tênis de Corrida',
+    storeId: 'centauro',
     originalPrice: 'R\$ 559,90',
     price: 'R\$ 459,90',
     description: 'Tênis leve com amortecimento para corridas e treinos.',
@@ -440,6 +472,7 @@ const List<Product> products = [
   Product(
     category: 'Esportes',
     name: 'Chuteira de Beisebol',
+    storeId: 'centauro',
     originalPrice: 'R\$ 399,90',
     price: 'R\$ 329,90',
     description: 'Chuteira com travas para maior aderência em campo.',
@@ -454,6 +487,7 @@ const List<Product> products = [
   Product(
     category: 'Esportes',
     name: 'Bola de Vôlei',
+    storeId: 'centauro',
     originalPrice: 'R\$ 69,90',
     price: 'R\$ 49,90',
     description: 'Bola de vôlei macia e resistente para quadra ou praia.',
@@ -465,6 +499,7 @@ const List<Product> products = [
   Product(
     category: 'Informática',
     name: 'MacBook Pro 14 polegadas',
+    storeId: 'magalu',
     originalPrice: 'R\$ 14.999,90',
     price: 'R\$ 12.999,90',
     description: 'Notebook com tela Liquid Retina, alto desempenho e bateria para o dia todo.',
@@ -478,6 +513,7 @@ const List<Product> products = [
   Product(
     category: 'Informática',
     name: 'Notebook Dell XPS 13',
+    storeId: 'magalu',
     originalPrice: 'R\$ 9.999,90',
     price: 'R\$ 8.499,90',
     description:
@@ -492,6 +528,7 @@ const List<Product> products = [
   Product(
     category: 'Informática',
     name: 'Notebook Lenovo Yoga',
+    storeId: 'magalu',
     originalPrice: 'R\$ 6.999,90',
     price: 'R\$ 5.999,90',
     description: 'Notebook 2 em 1 com tela sensível ao toque e dobradiça 360°.',
@@ -505,6 +542,7 @@ const List<Product> products = [
   Product(
     category: 'Informática',
     name: 'iPad Mini',
+    storeId: 'magalu',
     originalPrice: 'R\$ 4.599,90',
     price: 'R\$ 3.999,90',
     description: 'Tablet compacto e potente, ótimo para leitura, estudos e entretenimento.',
@@ -519,6 +557,7 @@ const List<Product> products = [
   Product(
     category: 'Informática',
     name: 'Tablet Samsung Galaxy Tab S8+',
+    storeId: 'magalu',
     originalPrice: 'R\$ 5.299,90',
     price: 'R\$ 4.499,90',
     description: 'Tablet com tela grande AMOLED e caneta inclusa.',
@@ -533,6 +572,7 @@ const List<Product> products = [
   Product(
     category: 'Acessórios',
     name: 'Mochila Escolar',
+    storeId: 'renner',
     originalPrice: 'R\$ 99,90',
     price: 'R\$ 79,90',
     description: 'Mochila em couro sintético com compartimentos espaçosos.',
@@ -546,6 +586,7 @@ const List<Product> products = [
   Product(
     category: 'Acessórios',
     name: 'Óculos de Sol Preto',
+    storeId: 'cea',
     originalPrice: 'R\$ 119,90',
     price: 'R\$ 89,90',
     description: 'Óculos de sol com proteção UV e armação leve.',
@@ -559,6 +600,7 @@ const List<Product> products = [
   Product(
     category: 'Acessórios',
     name: 'Óculos Verde e Preto',
+    storeId: 'cea',
     originalPrice: 'R\$ 139,90',
     price: 'R\$ 109,90',
     description: 'Óculos com armação moderna nas cores verde e preto.',
@@ -572,6 +614,7 @@ const List<Product> products = [
   Product(
     category: 'Acessórios',
     name: 'Relógio com Pulseira de Couro',
+    storeId: 'renner',
     originalPrice: 'R\$ 319,90',
     price: 'R\$ 249,90',
     description: 'Relógio analógico clássico com pulseira de couro marrom.',
@@ -585,6 +628,7 @@ const List<Product> products = [
   Product(
     category: 'Acessórios',
     name: 'Bolsa Feminina Preta',
+    storeId: 'renner',
     originalPrice: 'R\$ 229,90',
     price: 'R\$ 179,90',
     description: 'Bolsa de mão elegante com alça ajustável.',
@@ -598,6 +642,7 @@ const List<Product> products = [
   Product(
     category: 'Acessórios',
     name: 'Brinco de Cristal Verde',
+    storeId: 'cea',
     originalPrice: 'R\$ 89,90',
     price: 'R\$ 69,90',
     description: 'Brinco delicado com cristal verde para ocasiões especiais.',
@@ -613,6 +658,7 @@ const List<Product> products = [
   Product(
     category: 'Mercado',
     name: 'Maçã Fuji (kg)',
+    storeId: 'atakarejo',
     price: 'R\$ 9,90',
     description:
         'Maçãs frescas, crocantes e docinhas, selecionadas direto do produtor.',
@@ -624,6 +670,7 @@ const List<Product> products = [
   Product(
     category: 'Mercado',
     name: 'Morango (bandeja)',
+    storeId: 'atakarejo',
     price: 'R\$ 8,90',
     description: 'Bandeja de morangos frescos, ótimos para sobremesas e sucos.',
     imageUrl: 'https://cdn.dummyjson.com/product-images/groceries/strawberry/thumbnail.webp',
@@ -634,6 +681,7 @@ const List<Product> products = [
   Product(
     category: 'Mercado',
     name: 'Limão Tahiti (kg)',
+    storeId: 'atakarejo',
     price: 'R\$ 5,90',
     description:
         'Limões suculentos, perfeitos para temperos, sucos e caipirinhas.',
@@ -645,6 +693,7 @@ const List<Product> products = [
   Product(
     category: 'Mercado',
     name: 'Batata (kg)',
+    storeId: 'atakarejo',
     price: 'R\$ 6,49',
     description:
         'Batatas selecionadas, ideais para fritar, assar ou fazer purê.',
@@ -656,6 +705,7 @@ const List<Product> products = [
   Product(
     category: 'Mercado',
     name: 'Ovos Brancos (dúzia)',
+    storeId: 'atakarejo',
     price: 'R\$ 11,90',
     description: 'Dúzia de ovos frescos de granja.',
     imageUrl: 'https://cdn.dummyjson.com/product-images/groceries/eggs/thumbnail.webp',
@@ -666,6 +716,7 @@ const List<Product> products = [
   Product(
     category: 'Mercado',
     name: 'Mel Puro (500 g)',
+    storeId: 'atakarejo',
     price: 'R\$ 29,90',
     description: 'Mel puro de abelha, produzido por apicultores da região.',
     imageUrl: 'https://cdn.dummyjson.com/product-images/groceries/honey-jar/thumbnail.webp',
@@ -676,6 +727,7 @@ const List<Product> products = [
   Product(
     category: 'Mercado',
     name: 'Arroz Branco (5 kg)',
+    storeId: 'atakarejo',
     price: 'R\$ 27,90',
     description: 'Arroz branco tipo 1, soltinho e saboroso.',
     imageUrl: 'https://cdn.dummyjson.com/product-images/groceries/rice/thumbnail.webp',
@@ -686,6 +738,7 @@ const List<Product> products = [
   Product(
     category: 'Mercado',
     name: 'Leite Integral (1 L)',
+    storeId: 'atakarejo',
     price: 'R\$ 5,49',
     description:
         'Leite integral longa vida, fonte de cálcio para toda a família.',
@@ -697,6 +750,7 @@ const List<Product> products = [
   Product(
     category: 'Mercado',
     name: 'Café Solúvel (200 g)',
+    storeId: 'atakarejo',
     price: 'R\$ 24,90',
     description: 'Café solúvel de sabor intenso, pronto em segundos.',
     imageUrl: 'https://cdn.dummyjson.com/product-images/groceries/nescafe-coffee/thumbnail.webp',
@@ -707,6 +761,7 @@ const List<Product> products = [
   Product(
     category: 'Mercado',
     name: 'Sorvete (1,5 L)',
+    storeId: 'atakarejo',
     price: 'R\$ 22,90',
     description: 'Pote de sorvete cremoso, perfeito para os dias quentes.',
     imageUrl: 'https://cdn.dummyjson.com/product-images/groceries/ice-cream/thumbnail.webp',
@@ -720,6 +775,7 @@ const List<Product> products = [
   Product(
     category: 'Eletrônicos',
     name: 'Fone Over-Ear Premium',
+    storeId: 'magalu',
     price: 'R\$ 3.999,90',
     description: 'Fone com cancelamento de ruído, som de alta fidelidade e almofadas macias.',
     imageUrl: 'https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods-max-silver/thumbnail.webp',
@@ -730,6 +786,7 @@ const List<Product> products = [
   Product(
     category: 'Eletrônicos',
     name: 'Caixa de Som Compacta',
+    storeId: 'magalu',
     price: 'R\$ 699,90',
     description: 'Caixa de som inteligente e compacta, com som potente para qualquer ambiente.',
     imageUrl: 'https://cdn.dummyjson.com/product-images/mobile-accessories/apple-homepod-mini-cosmic-grey/thumbnail.webp',
@@ -740,6 +797,7 @@ const List<Product> products = [
   Product(
     category: 'Eletrônicos',
     name: 'Carregador sem Fio',
+    storeId: 'magalu',
     price: 'R\$ 199,90',
     description:
         'Base de carregamento sem fio para celular e fones compatíveis.',
@@ -751,6 +809,7 @@ const List<Product> products = [
   Product(
     category: 'Eletrônicos',
     name: 'Fone Intra-auricular sem Fio',
+    storeId: 'magalu',
     price: 'R\$ 299,90',
     description: 'Fone leve com cabo flexível e bateria para o dia todo.',
     imageUrl: 'https://cdn.dummyjson.com/product-images/mobile-accessories/beats-flex-wireless-earphones/thumbnail.webp',
@@ -761,6 +820,7 @@ const List<Product> products = [
   Product(
     category: 'Moda',
     name: 'Camisa Manga Curta Masculina',
+    storeId: 'riachuelo',
     price: 'R\$ 69,90',
     description: 'Camisa de manga curta em tecido leve, ideal para o calor.',
     imageUrl: 'https://cdn.dummyjson.com/product-images/mens-shirts/man-short-sleeve-shirt/thumbnail.webp',
@@ -774,6 +834,7 @@ const List<Product> products = [
   Product(
     category: 'Moda',
     name: 'Vestido Azul',
+    storeId: 'cea',
     price: 'R\$ 119,90',
     description: 'Vestido azul de tecido leve e corte soltinho.',
     imageUrl: 'https://cdn.dummyjson.com/product-images/tops/blue-frock/thumbnail.webp',
@@ -787,6 +848,7 @@ const List<Product> products = [
   Product(
     category: 'Moda',
     name: 'Sapatilha Vermelha',
+    storeId: 'mersan',
     price: 'R\$ 99,90',
     description: 'Sapatilha confortável e versátil na cor vermelha.',
     imageUrl: 'https://cdn.dummyjson.com/product-images/womens-shoes/red-shoes/thumbnail.webp',
@@ -800,6 +862,7 @@ const List<Product> products = [
   Product(
     category: 'Moda',
     name: 'Sandália Dourada',
+    storeId: 'mersan',
     price: 'R\$ 159,90',
     description: 'Sandália dourada elegante para festas e eventos.',
     imageUrl: 'https://cdn.dummyjson.com/product-images/womens-shoes/golden-shoes-woman/thumbnail.webp',
@@ -813,6 +876,7 @@ const List<Product> products = [
   Product(
     category: 'Celulares',
     name: 'iPhone X',
+    storeId: 'mersan',
     price: 'R\$ 2.499,90',
     description:
         'iPhone com tela OLED de ponta a ponta e reconhecimento facial.',
@@ -826,6 +890,7 @@ const List<Product> products = [
   Product(
     category: 'Celulares',
     name: 'Realme C35',
+    storeId: 'mersan',
     price: 'R\$ 899,90',
     description:
         'Celular com tela grande, câmera tripla e bateria de alta capacidade.',
@@ -839,6 +904,7 @@ const List<Product> products = [
   Product(
     category: 'Celulares',
     name: 'Vivo S1',
+    storeId: 'mersan',
     price: 'R\$ 1.099,90',
     description: 'Celular com câmera frontal retrátil e visual moderno.',
     imageUrl: 'https://cdn.dummyjson.com/product-images/smartphones/vivo-s1/thumbnail.webp',
@@ -851,6 +917,7 @@ const List<Product> products = [
   Product(
     category: 'Casa',
     name: 'Cama Casal Estofada',
+    storeId: 'magalu',
     price: 'R\$ 3.499,90',
     description: 'Cama de casal com cabeceira estofada e acabamento premium.',
     imageUrl: 'https://cdn.dummyjson.com/product-images/furniture/annibale-colombo-bed/thumbnail.webp',
@@ -863,6 +930,7 @@ const List<Product> products = [
   Product(
     category: 'Casa',
     name: 'Cadeira de Escritório',
+    storeId: 'magalu',
     price: 'R\$ 1.299,90',
     description:
         'Cadeira ergonômica e elegante para escritório ou home office.',
@@ -876,6 +944,7 @@ const List<Product> products = [
   Product(
     category: 'Casa',
     name: 'Luminária de Mesa',
+    storeId: 'riachuelo',
     price: 'R\$ 149,90',
     description: 'Luminária de mesa com luz aconchegante para leitura.',
     imageUrl: 'https://cdn.dummyjson.com/product-images/home-decoration/table-lamp/thumbnail.webp',
@@ -886,6 +955,7 @@ const List<Product> products = [
   Product(
     category: 'Casa',
     name: 'Balanço Decorativo',
+    storeId: 'riachuelo',
     price: 'R\$ 229,90',
     description: 'Balanço decorativo para varanda ou jardim.',
     imageUrl: 'https://cdn.dummyjson.com/product-images/home-decoration/decoration-swing/thumbnail.webp',
@@ -898,6 +968,7 @@ const List<Product> products = [
   Product(
     category: 'Casa',
     name: 'Suporte para Canecas',
+    storeId: 'riachuelo',
     price: 'R\$ 59,90',
     description:
         'Suporte em formato de árvore para organizar canecas na cozinha.',
@@ -910,6 +981,7 @@ const List<Product> products = [
   Product(
     category: 'Beleza',
     name: 'Paleta de Sombras com Espelho',
+    storeId: 'boticario',
     price: 'R\$ 69,90',
     description: 'Paleta com várias cores de sombra e espelho embutido.',
     imageUrl: 'https://cdn.dummyjson.com/product-images/beauty/eyeshadow-palette-with-mirror/thumbnail.webp',
@@ -920,6 +992,7 @@ const List<Product> products = [
   Product(
     category: 'Beleza',
     name: 'Batom Vermelho',
+    storeId: 'boticario',
     price: 'R\$ 39,90',
     description: 'Batom de cor intensa e longa duração.',
     imageUrl: 'https://cdn.dummyjson.com/product-images/beauty/red-lipstick/thumbnail.webp',
@@ -930,6 +1003,7 @@ const List<Product> products = [
   Product(
     category: 'Beleza',
     name: 'Esmalte Vermelho',
+    storeId: 'boticario',
     price: 'R\$ 12,90',
     description: 'Esmalte de secagem rápida e brilho duradouro.',
     imageUrl: 'https://cdn.dummyjson.com/product-images/beauty/red-nail-polish/thumbnail.webp',
@@ -940,6 +1014,7 @@ const List<Product> products = [
   Product(
     category: 'Beleza',
     name: 'Perfume Dolce Shine',
+    storeId: 'boticario',
     price: 'R\$ 399,90',
     description: 'Fragrância feminina frutada e alegre.',
     imageUrl: 'https://cdn.dummyjson.com/product-images/fragrances/dolce-shine-eau-de/thumbnail.webp',
@@ -952,6 +1027,7 @@ const List<Product> products = [
   Product(
     category: 'Beleza',
     name: 'Sabonete Líquido para Mãos',
+    storeId: 'boticario',
     price: 'R\$ 29,90',
     description: 'Sabonete líquido suave, com ingredientes de origem vegetal.',
     imageUrl: 'https://cdn.dummyjson.com/product-images/skin-care/attitude-super-leaves-hand-soap/thumbnail.webp',
@@ -964,6 +1040,7 @@ const List<Product> products = [
   Product(
     category: 'Esportes',
     name: 'Bola de Basquete',
+    storeId: 'centauro',
     price: 'R\$ 89,90',
     description: 'Bola de basquete com ótima aderência para quadras internas e externas.',
     imageUrl: 'https://cdn.dummyjson.com/product-images/sports-accessories/basketball/thumbnail.webp',
@@ -974,6 +1051,7 @@ const List<Product> products = [
   Product(
     category: 'Esportes',
     name: 'Raquete de Tênis',
+    storeId: 'centauro',
     price: 'R\$ 249,90',
     description: 'Raquete leve e equilibrada para iniciantes e intermediários.',
     imageUrl: 'https://cdn.dummyjson.com/product-images/sports-accessories/tennis-racket/thumbnail.webp',
@@ -984,6 +1062,7 @@ const List<Product> products = [
   Product(
     category: 'Esportes',
     name: 'Bola de Futebol',
+    storeId: 'centauro',
     price: 'R\$ 99,90',
     description: 'Bola de futebol resistente para campo e society.',
     imageUrl: 'https://cdn.dummyjson.com/product-images/sports-accessories/football/thumbnail.webp',
@@ -994,6 +1073,7 @@ const List<Product> products = [
   Product(
     category: 'Esportes',
     name: 'Aro de Basquete',
+    storeId: 'centauro',
     price: 'R\$ 179,90',
     description: 'Aro de basquete com rede, fácil de instalar.',
     imageUrl: 'https://cdn.dummyjson.com/product-images/sports-accessories/basketball-rim/thumbnail.webp',
@@ -1004,6 +1084,7 @@ const List<Product> products = [
   Product(
     category: 'Informática',
     name: 'Notebook Asus Zenbook Pro Duo',
+    storeId: 'magalu',
     price: 'R\$ 11.999,90',
     description:
         'Notebook com duas telas para produtividade e criação de conteúdo.',
@@ -1017,6 +1098,7 @@ const List<Product> products = [
   Product(
     category: 'Informática',
     name: 'Notebook Huawei Matebook X Pro',
+    storeId: 'magalu',
     price: 'R\$ 7.999,90',
     description: 'Notebook leve com tela de alta resolução e corpo em metal.',
     imageUrl: 'https://cdn.dummyjson.com/product-images/laptops/huawei-matebook-x-pro/thumbnail.webp',
@@ -1029,6 +1111,7 @@ const List<Product> products = [
   Product(
     category: 'Informática',
     name: 'Tablet Samsung Galaxy Tab',
+    storeId: 'magalu',
     price: 'R\$ 1.999,90',
     description: 'Tablet para estudos, vídeos e navegação.',
     imageUrl: 'https://cdn.dummyjson.com/product-images/tablets/samsung-galaxy-tab-white/thumbnail.webp',
@@ -1042,6 +1125,7 @@ const List<Product> products = [
   Product(
     category: 'Acessórios',
     name: 'Óculos de Sol Clássico',
+    storeId: 'cea',
     price: 'R\$ 79,90',
     description: 'Óculos de sol de design clássico com proteção UV.',
     imageUrl: 'https://cdn.dummyjson.com/product-images/sunglasses/classic-sun-glasses/thumbnail.webp',
@@ -1054,6 +1138,7 @@ const List<Product> products = [
   Product(
     category: 'Acessórios',
     name: 'Bolsa de Couro Premium',
+    storeId: 'renner',
     price: 'R\$ 1.999,90',
     description: 'Bolsa de couro com acabamento refinado e alça de mão.',
     imageUrl: 'https://cdn.dummyjson.com/product-images/womens-bags/prada-women-bag/thumbnail.webp',
@@ -1066,6 +1151,7 @@ const List<Product> products = [
   Product(
     category: 'Acessórios',
     name: 'Brinco Oval Verde',
+    storeId: 'cea',
     price: 'R\$ 59,90',
     description: 'Brinco oval com pedra verde, delicado e elegante.',
     imageUrl: 'https://cdn.dummyjson.com/product-images/womens-jewellery/green-oval-earring/thumbnail.webp',
@@ -1078,6 +1164,7 @@ const List<Product> products = [
   Product(
     category: 'Acessórios',
     name: 'Relógio Dourado Feminino',
+    storeId: 'renner',
     price: 'R\$ 899,90',
     description: 'Relógio feminino dourado com mostrador elegante.',
     imageUrl: 'https://cdn.dummyjson.com/product-images/womens-watches/watch-gold-for-women/thumbnail.webp',

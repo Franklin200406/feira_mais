@@ -10,7 +10,7 @@ import '../screens/categories_screen.dart';
 import '../screens/more_screen.dart';
 import '../widgets/category_carousel.dart';
 import '../widgets/outdoor_carousel.dart';
-import '../widgets/product_card.dart';
+import '../widgets/product_grid.dart';
 
 class HomeScreen extends StatefulWidget {
   final String initialCategory;
@@ -55,23 +55,6 @@ class _HomeScreenState extends State<HomeScreen> {
           fontWeight: FontWeight.bold,
         ),
       ),
-    );
-  }
-
-  Widget _buildProductGrid(List<Product> gridProducts) {
-    return GridView.builder(
-      shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        crossAxisSpacing: 12,
-        mainAxisSpacing: 16,
-        childAspectRatio: 0.68,
-      ),
-      itemCount: gridProducts.length,
-      itemBuilder: (context, index) {
-        return ProductCard(product: gridProducts[index]);
-      },
     );
   }
 
@@ -345,14 +328,14 @@ return Scaffold(
               // Produtos em promoção
               if (saleProducts.isNotEmpty) ...[
                 _buildSectionTitle('Ofertas'),
-                _buildProductGrid(saleProducts),
+                ProductGrid(products: saleProducts),
                 const SizedBox(height: 28),
               ],
 
               // Produtos sem promoção
               if (regularProducts.isNotEmpty) ...[
                 _buildSectionTitle('Produtos'),
-                _buildProductGrid(regularProducts),
+                ProductGrid(products: regularProducts),
               ],
             ],
           ),

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../data/stores.dart';
 import '../models/product.dart';
+import '../widgets/store_avatar.dart';
 import '../widgets/product_image.dart';
 import 'cart_screen.dart';
+import 'store_screen.dart';
 
 class ProductScreen extends StatefulWidget {
   final Product product;
@@ -117,6 +120,63 @@ class _ProductScreenState extends State<ProductScreen> {
     );
   }
 
+  Widget _buildSellerCard() {
+    final store = findStore(widget.product.storeId);
+
+    return Material(
+      color: Colors.grey.shade100,
+      borderRadius: BorderRadius.circular(14),
+      clipBehavior: Clip.antiAlias,
+      child: InkWell(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => StoreScreen(store: store)),
+          );
+        },
+        child: Padding(
+          padding: const EdgeInsets.all(14),
+          child: Row(
+            children: [
+              StoreAvatar(store: store, radius: 22),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Vendido por',
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: Colors.grey.shade600,
+                      ),
+                    ),
+                    Text(
+                      store.name,
+                      style: const TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      'Ver vitrine da loja',
+                      style: TextStyle(
+                        fontSize: 13,
+                        color: Colors.deepPurple.shade400,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const Icon(Icons.chevron_right, color: Colors.deepPurple),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final discount = discountPercentage;
@@ -216,6 +276,11 @@ class _ProductScreenState extends State<ProductScreen> {
               color: Colors.deepPurple,
             ),
           ),
+
+          const SizedBox(height: 20),
+
+          // Loja que vende o produto
+          _buildSellerCard(),
 
           const SizedBox(height: 20),
 

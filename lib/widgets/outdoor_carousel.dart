@@ -1,8 +1,13 @@
 import 'dart:async';
-import 'dart:math';
 
 import 'package:flutter/material.dart';
 
+import '../data/stores.dart';
+import '../models/store.dart';
+import '../screens/store_screen.dart';
+import 'store_avatar.dart';
+
+// Carrossel da tela inicial com as lojas que mais venderam no trimestre
 class OutdoorCarousel extends StatefulWidget {
   const OutdoorCarousel({super.key});
 
@@ -13,40 +18,7 @@ class OutdoorCarousel extends StatefulWidget {
 class _OutdoorCarouselState extends State<OutdoorCarousel> {
   final PageController _pageController = PageController(viewportFraction: 0.90);
 
-  // Propagandas de lojas do varejo local.
-  // Fotos: Wikimedia Commons.
-  final List<_StoreAd> _ads = [
-    const _StoreAd(
-      storeName: 'Hortifruti Da Terra',
-      slogan: 'Frutas e verduras fresquinhas todos os dias',
-      tag: 'Hortifruti',
-      imageUrl: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/2/24/Outdoor_market_fruit_and_vegetable_stall_Market_Place_Romford_London_01.jpg/1280px-Outdoor_market_fruit_and_vegetable_stall_Market_Place_Romford_London_01.jpg',
-    ),
-    const _StoreAd(
-      storeName: 'Padaria Pão Quentinho',
-      slogan: 'Pães artesanais saindo do forno a toda hora',
-      tag: 'Padaria',
-      imageUrl: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Bread_at_a_Massachusetts_bakery.jpg/1280px-Bread_at_a_Massachusetts_bakery.jpg',
-    ),
-    const _StoreAd(
-      storeName: 'Calçados Passo Certo',
-      slogan: 'Conforto e estilo para todos os passos',
-      tag: 'Calçados',
-      imageUrl: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Genuine_leather_shoes_in_shop_window.jpg/1280px-Genuine_leather_shoes_in_shop_window.jpg',
-    ),
-    const _StoreAd(
-      storeName: 'Floricultura Jardim Florido',
-      slogan: 'Flores e plantas para alegrar a sua casa',
-      tag: 'Floricultura',
-      imageUrl: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/3/37/Floriculture.jpg/1280px-Floriculture.jpg',
-    ),
-    const _StoreAd(
-      storeName: 'Peixaria Maré Alta',
-      slogan: 'Peixes e frutos do mar direto do pescador',
-      tag: 'Peixaria',
-      imageUrl: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Fresh_fish_displayed_on_a_market_stall_at_the_port_in_Antibes%2C_France_%2854479363589%29.jpg/1280px-Fresh_fish_displayed_on_a_market_stall_at_the_port_in_Antibes%2C_France_%2854479363589%29.jpg',
-    ),
-  ];
+  final List<Store> _stores = topSellerStores;
 
   Timer? _timer;
 
@@ -56,14 +28,12 @@ class _OutdoorCarouselState extends State<OutdoorCarousel> {
   void initState() {
     super.initState();
 
-    _ads.shuffle(Random());
-
     _timer = Timer.periodic(const Duration(seconds: 5), (timer) {
       if (!_pageController.hasClients) {
         return;
       }
 
-      final nextPage = (_currentPage + 1) % _ads.length;
+      final nextPage = (_currentPage + 1) % _stores.length;
 
       _pageController.animateToPage(
         nextPage,
@@ -83,22 +53,50 @@ class _OutdoorCarouselState extends State<OutdoorCarousel> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        const Row(
+          children: [
+            Icon(Icons.emoji_events, color: Colors.orange),
+            SizedBox(width: 8),
+            Expanded(
+              child: Text(
+                'Lojas que mais venderam no trimestre',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
+            ),
+          ],
+        ),
+
+        const SizedBox(height: 12),
+
         SizedBox(
           height: 180,
           width: double.infinity,
           child: PageView.builder(
             controller: _pageController,
-            itemCount: _ads.length,
+            itemCount: _stores.length,
             onPageChanged: (index) {
               setState(() {
                 _currentPage = index;
               });
             },
             itemBuilder: (context, index) {
+              final store = _stores[index];
+
               return Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 4),
-                child: _StoreAdBanner(ad: _ads[index]),
+                child: _StoreBanner(
+                  store: store,
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => StoreScreen(store: store),
+                      ),
+                    );
+                  },
+                ),
               );
             },
           ),
@@ -108,7 +106,7 @@ class _OutdoorCarouselState extends State<OutdoorCarousel> {
 
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: List.generate(_ads.length, (index) {
+          children: List.generate(_stores.length, (index) {
             final isActive = index == _currentPage;
 
             return AnimatedContainer(
@@ -128,24 +126,11 @@ class _OutdoorCarouselState extends State<OutdoorCarousel> {
   }
 }
 
-class _StoreAd {
-  final String storeName;
-  final String slogan;
-  final String tag;
-  final String imageUrl;
+class _StoreBanner extends StatelessWidget {
+  final Store store;
+  final VoidCallback onTap;
 
-  const _StoreAd({
-    required this.storeName,
-    required this.slogan,
-    required this.tag,
-    required this.imageUrl,
-  });
-}
-
-class _StoreAdBanner extends StatelessWidget {
-  final _StoreAd ad;
-
-  const _StoreAdBanner({required this.ad});
+  const _StoreBanner({required this.store, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -156,7 +141,7 @@ class _StoreAdBanner extends StatelessWidget {
         children: [
           // Foto da loja
           Image.network(
-            ad.imageUrl,
+            store.imageUrl,
             fit: BoxFit.cover,
             loadingBuilder: (context, child, loadingProgress) {
               if (loadingProgress == null) {
@@ -192,8 +177,8 @@ class _StoreAdBanner extends StatelessWidget {
                 begin: Alignment.centerLeft,
                 end: Alignment.centerRight,
                 colors: [
-                  Colors.black.withValues(alpha: 0.75),
-                  Colors.black.withValues(alpha: 0.10),
+                  Colors.black.withValues(alpha: 0.80),
+                  Colors.black.withValues(alpha: 0.15),
                 ],
               ),
             ),
@@ -204,8 +189,8 @@ class _StoreAdBanner extends StatelessWidget {
             padding: const EdgeInsets.all(16),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.end,
               children: [
+                // Posição no ranking
                 Container(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 8,
@@ -215,39 +200,75 @@ class _StoreAdBanner extends StatelessWidget {
                     color: Colors.orange,
                     borderRadius: BorderRadius.circular(6),
                   ),
-                  child: Text(
-                    ad.tag,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const Icon(
+                        Icons.emoji_events,
+                        size: 14,
+                        color: Colors.white,
+                      ),
+                      const SizedBox(width: 4),
+                      Text(
+                        '${store.salesRank}º mais vendido',
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
 
-                const SizedBox(height: 8),
+                const Spacer(),
 
-                Text(
-                  ad.storeName,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
-                  ),
+                Row(
+                  children: [
+                    StoreAvatar(store: store, radius: 18),
+                    const SizedBox(width: 10),
+                    Expanded(
+                      child: Text(
+                        store.name,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
 
                 const SizedBox(height: 4),
 
                 Text(
-                  ad.slogan,
-                  maxLines: 2,
+                  store.slogan,
+                  maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: const TextStyle(color: Colors.white, fontSize: 14),
                 ),
+
+                const SizedBox(height: 2),
+
+                Text(
+                  '${store.quarterlyOrders} pedidos • Ver vitrine ›',
+                  style: const TextStyle(
+                    color: Colors.orange,
+                    fontSize: 13,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ],
             ),
+          ),
+
+          // Toque em qualquer parte abre a vitrine da loja
+          Material(
+            color: Colors.transparent,
+            child: InkWell(onTap: onTap),
           ),
         ],
       ),

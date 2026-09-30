@@ -2,6 +2,9 @@ class Product {
   final String category;
   final String name;
 
+  // Loja que vende o produto (ver lib/data/stores.dart)
+  final String storeId;
+
   // Preço atual de venda
   final String price;
 
@@ -19,6 +22,7 @@ class Product {
   const Product({
     required this.category,
     required this.name,
+    required this.storeId,
     required this.price,
     this.originalPrice,
     required this.description,
