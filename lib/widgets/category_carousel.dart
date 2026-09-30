@@ -12,6 +12,7 @@ class CategoryCarousel extends StatelessWidget {
 
   static const List<String> categories = [
     'Tudo',
+    'Mercado',
     'Moda',
     'Celulares',
     'Eletrônicos',
@@ -45,7 +46,7 @@ class CategoryCarousel extends StatelessWidget {
               },
               style: TextButton.styleFrom(
                 padding: const EdgeInsets.symmetric(horizontal: 4),
-                foregroundColor: Colors.orange,
+                foregroundColor: Colors.white,
               ),
               child: Text(
                 category,

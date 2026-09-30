@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'cart_screen.dart';
+import 'categories_screen.dart';
 
 
 class MoreScreen extends StatelessWidget {
@@ -8,6 +9,7 @@ class MoreScreen extends StatelessWidget {
 
   static const List<String> categories = [
     'Tudo',
+    'Mercado',
     'Moda',
     'Celulares',
     'Eletrônicos',
@@ -188,6 +190,15 @@ class MoreScreen extends StatelessWidget {
         onTap: (index) {
           if (index == 0) {
             Navigator.of(context).popUntil((route) => route.isFirst);
+          }
+
+          if (index == 1) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const CategoriesScreen(),
+              ),
+            );
           }
 
           if (index == 2) {

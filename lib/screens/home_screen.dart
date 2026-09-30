@@ -2,82 +2,77 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
+import '../data/products.dart';
+import '../models/product.dart';
 import '../screens/notifications_screen.dart';
 import '../screens/cart_screen.dart';
+import '../screens/categories_screen.dart';
 import '../screens/more_screen.dart';
 import '../widgets/category_carousel.dart';
 import '../widgets/outdoor_carousel.dart';
 import '../widgets/product_card.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  final String initialCategory;
+
+  const HomeScreen({
+    super.key,
+    this.initialCategory = 'Tudo',
+  });
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  String selectedCategory = 'Tudo';
+  late String selectedCategory = widget.initialCategory;
 
-  final List<Map<String, String>> products = [
-    {
-      'category': 'Eletrônicos',
-      'name': 'Fone de Ouvido Bluetooth',
-      'originalPrice': 'R\$ 119,90',
-      'promotionalPrice': 'R\$ 89,90',
-    },
-    {
-      'category': 'Moda',
-      'name': 'Tênis Esportivo',
-      'originalPrice': 'R\$ 199,90',
-      'promotionalPrice': 'R\$ 149,90',
-    },
-    {
-      'category': 'Eletrônicos',
-      'name': 'Smartwatch Digital',
-      'originalPrice': 'R\$ 249,90',
-      'promotionalPrice': 'R\$ 199,90',
-    },
-    {
-      'category': 'Acessórios',
-      'name': 'Mochila Escolar',
-      'originalPrice': 'R\$ 99,90',
-      'promotionalPrice': 'R\$ 79,90',
-    },
-    {
-      'category': 'Casa',
-      'name': 'Cafeteira Elétrica',
-      'originalPrice': 'R\$ 169,90',
-      'promotionalPrice': 'R\$ 129,90',
-    },
-    {
-      'category': 'Eletrônicos',
-      'name': 'Caixa de Som Bluetooth',
-      'originalPrice': 'R\$ 199,90',
-      'promotionalPrice': 'R\$ 159,90',
-    },
-    {
-      'category': 'Celulares',
-      'name': 'Smartphone',
-      'originalPrice': 'R\$ 1.499,90',
-      'promotionalPrice': 'R\$ 1.299,90',
-    },
-    {
-      'category': 'Informática',
-      'name': 'Teclado Mecânico',
-      'originalPrice': 'R\$ 299,90',
-      'promotionalPrice': 'R\$ 229,90',
-    },
-  ];
-
-  List<Map<String, String>> get filteredProducts {
+  List<Product> get filteredProducts {
     if (selectedCategory == 'Tudo') {
       return products;
     }
 
     return products
-        .where((product) => product['category'] == selectedCategory)
+        .where((product) => product.category == selectedCategory)
         .toList();
+  }
+
+  List<Product> get saleProducts {
+    return filteredProducts.where((product) => product.isOnSale).toList();
+  }
+
+  List<Product> get regularProducts {
+    return filteredProducts.where((product) => !product.isOnSale).toList();
+  }
+
+  Widget _buildSectionTitle(String title) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16),
+      child: Text(
+        title,
+        style: const TextStyle(
+          fontSize: 22,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildProductGrid(List<Product> gridProducts) {
+    return GridView.builder(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        crossAxisSpacing: 12,
+        mainAxisSpacing: 16,
+        childAspectRatio: 0.68,
+      ),
+      itemCount: gridProducts.length,
+      itemBuilder: (context, index) {
+        return ProductCard(product: gridProducts[index]);
+      },
+    );
   }
 
   void selectCategory(String category) {
@@ -347,38 +342,18 @@ return Scaffold(
 
                 const SizedBox(height: 24),
               ],
-              const Text(
-                'Ofertas',
-                style: TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+              // Produtos em promoção
+              if (saleProducts.isNotEmpty) ...[
+                _buildSectionTitle('Ofertas'),
+                _buildProductGrid(saleProducts),
+                const SizedBox(height: 28),
+              ],
 
-              const SizedBox(height: 16),
-
-              GridView.builder(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                gridDelegate:
-                    const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 12,
-                  mainAxisSpacing: 16,
-                  childAspectRatio: 0.68,
-                ),
-                itemCount: filteredProducts.length,
-                itemBuilder: (context, index) {
-                  final product = filteredProducts[index];
-
-                  return ProductCard(
-                    productName: product['name']!,
-                    imageUrl: '',
-                    originalPrice: product['originalPrice']!,
-                    promotionalPrice: product['promotionalPrice']!,
-                  );
-                },
-              ),
+              // Produtos sem promoção
+              if (regularProducts.isNotEmpty) ...[
+                _buildSectionTitle('Produtos'),
+                _buildProductGrid(regularProducts),
+              ],
             ],
           ),
         ),
@@ -394,6 +369,15 @@ bottomNavigationBar: BottomNavigationBar(
   selectedItemColor: Colors.orange,
   unselectedItemColor: Colors.black,
   onTap: (index) {
+          if (index == 1) {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const CategoriesScreen(),
+              ),
+            );
+          }
+
   if (index == 2) {
     Navigator.push(
       context,

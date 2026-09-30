@@ -1,4 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Necessária para carregar as imagens dos produtos da internet -->
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:label="feiramais_pi"
         android:name="${applicationName}"
